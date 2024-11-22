@@ -1,15 +1,24 @@
 {
   "name": "react-bsky",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/bryanltobing/react-bsky.git",
   "scripts": {
     "lint": "eslint . --max-warnings 0",
     "generate:component": "turbo gen react-component",
     "check-types": "tsc --noEmit",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "build": "tsup",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
     "publish-package": "npm publish --access public"
   },
