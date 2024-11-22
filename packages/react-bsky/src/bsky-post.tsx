@@ -116,6 +116,7 @@ const styles = {
 // Component
 export const BskyPost = ({ handle, id }: BskyPostProps) => {
   const [post, setPost] = useState<Post>();
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     fetch(
@@ -130,7 +131,13 @@ export const BskyPost = ({ handle, id }: BskyPostProps) => {
         }) => {
           setPost(data.thread.post);
         }
-      );
+      )
+      .catch(() => {
+        setErrorMessage(
+          "Error fetching post, Make sure you have the correct handle and post id"
+        );
+        setPost(undefined)
+      });
   }, [handle, id]);
 
   return (
@@ -152,7 +159,13 @@ export const BskyPost = ({ handle, id }: BskyPostProps) => {
         }
       >
         {!post ? (
-          <p>Loading...</p>
+          <>
+            {errorMessage ? (
+              <p style={{ color: "red" }}>{errorMessage}</p>
+            ) : (
+              <p>Loading...</p>
+            )}
+          </>
         ) : (
           <div style={styles.inner}>
             <div style={styles.header}>
