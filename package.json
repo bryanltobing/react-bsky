@@ -1,5 +1,4 @@
 {
-  "name": "react-bsky",
   "private": true,
   "scripts": {
     "build": "turbo build",

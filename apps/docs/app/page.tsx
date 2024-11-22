@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { BskyPost } from "react-bsky";
 
-export function useDebounce<T>(value: T, delay: number): T {
+function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
