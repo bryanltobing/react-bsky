@@ -72,6 +72,15 @@ export default function Home() {
       <div style={{ display: "flex", flexDirection: "column", gap: "32px" }}>
         <h1>Embed Bluesky post in your React application.</h1>
 
+        <a
+          href="https://github.com/bryanltobing/react-bsky"
+          style={{ textAlign: "center" }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View source code on GitHub
+        </a>
+
         <div style={{ display: "flex", gap: "0.5rem" }}>
           <input
             type="text"
@@ -114,6 +123,68 @@ export default function Home() {
           ) : (
             <p style={{ color: "red" }}>URL most likely invalid</p>
           )}
+        </div>
+
+        <div
+          style={{
+            paddingTop: "2rem",
+            lineHeight: "1.5",
+          }}
+        >
+          <h1 style={{ fontSize: "2rem", marginBottom: "1rem", color: "#333" }}>
+            Usage
+          </h1>
+          <p style={{ marginBottom: "1rem", fontSize: "1rem", color: "#555" }}>
+            Install the package:
+          </p>
+          <code
+            style={{
+              display: "block",
+              marginBottom: "1rem",
+              backgroundColor: "#f4f4f4",
+              padding: "0.5rem",
+              borderRadius: "4px",
+              fontSize: "0.9rem",
+              color: "#c7254e",
+              fontFamily: "monospace",
+            }}
+          >
+            npm install react-bsky
+          </code>
+          <p style={{ marginBottom: "1rem", fontSize: "1rem", color: "#555" }}>
+            Import the component:
+          </p>
+          <code
+            style={{
+              display: "block",
+              marginBottom: "1rem",
+              backgroundColor: "#f4f4f4",
+              padding: "0.5rem",
+              borderRadius: "4px",
+              fontSize: "0.9rem",
+              color: "#c7254e",
+              fontFamily: "monospace",
+            }}
+          >
+            import &#123; BskyPost &#125; from "react-bsky";
+          </code>
+          <p style={{ marginBottom: "1rem", fontSize: "1rem", color: "#555" }}>
+            Use the component:
+          </p>
+          <code
+            style={{
+              display: "block",
+              backgroundColor: "#f4f4f4",
+              padding: "0.5rem",
+              borderRadius: "4px",
+              fontSize: "0.9rem",
+              color: "#c7254e",
+              fontFamily: "monospace",
+            }}
+          >
+            &lt;BskyPost handle="{bskyPostProps?.handle}" id="
+            {bskyPostProps?.id}" /&gt;
+          </code>
         </div>
       </div>
     </div>
